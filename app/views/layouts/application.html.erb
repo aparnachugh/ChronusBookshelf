@@ -1,0 +1,49 @@
+ 
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>The Online BookStore</title>
+ <%= stylesheet_link_tag "scaffold" %>
+ <%= stylesheet_link_tag "depot", :media =>"all" %>
+ <%= javascript_include_tag :defaults %>
+ <%= csrf_meta_tag %>
+</head>
+<body id="store" >
+ <div id="banner" >
+ <%= image_tag("logo.png") %>
+ <%= @page_title || "Chronus Bookshelf" %>
+ </div>
+ <div id="columns" >
+ <div id="side" >
+ <div id="cart" >
+	<%= render @cart %>
+ </div>
+	
+ <a href="http://localhost:3000" >Home</a><br />
+ <a href="http://www..../faq" >Questions</a><br />
+ <a href="http://www..../news" >News</a><br />
+ <a href="http://www..../contact" >Contact</a><br /><br />
+ <!--<a href="http://localhost:3000/products/new" >Add a New product</a><br />-->
+
+ <% if session[:user_id] %>
+ <br />
+ <%= link_to 'Orders', orders_path %><br />
+ <%= link_to 'Products', products_path %><br />
+ <%= link_to 'Users', users_path %><br />
+ <br />
+ <%= link_to 'Change Password' %><br />
+
+<br />
+ <%= button_to 'Logout', logout_path, :method => :delete %>
+ <% end  %>
+
+ <br /><br />
+ <p style='color:#ffffff'>It is now <%= Time.now %></p>
+ </div>
+ 
+ <div id="main" >
+ <%= yield %>
+ </div>
+ </div>
+ </body>
+</html>

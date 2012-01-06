@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: Aparna Chugh	
+  address: MyText
+  email: aparna@chronus.com
+  pay_type: Cash
+
+two:
+  name: MyString
+  address: MyText
+  email: MyString
+  pay_type: MyString
